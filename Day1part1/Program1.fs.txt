@@ -1,0 +1,58 @@
+﻿open System
+open System.IO
+
+module GetInput =
+    let readLinesList (path: string) : string list =
+        File.ReadLines(path) |> Seq.toList
+        // alternative: File.ReadAllLines(path) |> Array.toList
+
+module Run =
+    open GetInput
+    // let fileName = "example.txt"
+    let fileName = "input.txt"
+    let input: list<string> = readLinesList fileName
+    // printfn $"{input}"
+
+
+    let splitByWhitespaceSimple (line: string) : string list =
+        line.Split([| ' '; '\t'; '\r'; '\n' |], StringSplitOptions.RemoveEmptyEntries)
+        |> Array.toList
+
+    let tryParseInt (s: string) : int option =
+        match Int32.TryParse s with
+        | true, v -> Some v
+        | _ -> None
+    let parseIntTokens (tokens: string list) : int list =
+        tokens |> List.choose tryParseInt
+
+    let intsPerLine : int list list =
+        input |> List.map (splitByWhitespaceSimple >> parseIntTokens)
+    // printfn $"{intsPerLine}"
+
+    let toTuples (rows: int list list) : (int * int) list =
+        rows |> List.map (
+            function | [a; b] -> (a,b) | _ -> failwith "expected two ints"
+         )
+    
+    let pairs =
+        toTuples intsPerLine
+
+    let columns (pairs: (int * int) list) : int list * int list =
+        List.unzip pairs
+
+    let sortedColumns (pairs: (int * int) list) : int list * int list =
+        let c1, c2 = columns pairs
+        List.sort c1, List.sort c2
+    
+    // let c1, c2 = columns pairs
+    let c1sorted,c2sorted = sortedColumns pairs
+    printfn $"{c1sorted}"
+    printfn $"{c2sorted}"
+
+    let differences (i1: int list, i2: int list) : int list =
+        let size:int = (List.length i1) - 1
+        [ for i in 0 .. size do yield abs (i1[i] - i2[i]) ]
+
+    let deltas: int list = differences (c1sorted, c2sorted)
+    let result: int = List.sum deltas
+    printfn $"{result}"

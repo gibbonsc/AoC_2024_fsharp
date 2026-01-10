@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="Tour">
+    <resource name="FSharpSignatureData.Tour" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.Tour" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.Tour" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.Tour" action="remove"></resource>
+    <resource name="FSharpOptimizationData.Tour" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.Tour" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.Tour" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.Tour" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.Tour" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.Tour" action="remove"></resource>
+  </assembly>
+</linker>

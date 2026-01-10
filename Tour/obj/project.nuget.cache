@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PrkWv2M9e1M=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cgibbons\\source\\repos\\AoC_2024_fsharp\\Tour\\Tour.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cgibbons\\.nuget\\packages\\fsharp.core\\10.0.101\\fsharp.core.10.0.101.nupkg.sha512"
+  ],
+  "logs": []
+}
