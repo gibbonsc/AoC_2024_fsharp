@@ -1,0 +1,5 @@
+{
+  "FSharp.TestExplorer.AutoDiscoverTestsOnLoad": false,
+  "FSharp.disableFailedProjectNotifications": true,
+  "FSharp.excludeProjectDirectories": []
+}
