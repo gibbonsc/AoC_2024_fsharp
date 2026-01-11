@@ -1,3 +1,4 @@
+[Advent of Code](https://adventofcode.com/) competition, year 2024.
 work in progress
 
 The **Ionide for F#** extension for Visual Studio Code
