@@ -1,0 +1,90 @@
+# ----- ----- genAI "gold standard" for new professionally organized project
+# ----- start a "solution"
+mkdir Day3part1
+cd Day3part1
+
+dotnet new sln -n Day3part1
+
+# Library where your real logic lives
+mkdir src
+dotnet new classlib -lang "F#" -n Day3part1 -o src/Day3part1
+
+# Production console app
+mkdir app
+dotnet new console -lang "F#" -n Day3part1.App -o app/Day3part1.App
+
+# Test project using Expecto
+mkdir tests
+dotnet new console -lang "F#" -n Day3part1.Tests -o tests/Day3part1.Tests
+
+# ----- then add project references
+
+dotnet sln add src/Day3part1/Day3part1.fsproj
+dotnet sln add app/Day3part1.App/Day3part1.App.fsproj
+dotnet sln add tests/Day3part1.Tests/Day3part1.Tests.fsproj
+
+dotnet add app/Day3part1.App reference src/Day3part1
+dotnet add tests/Day3part1.Tests reference src/Day3part1
+
+# ----- then install Expecto in test project:
+dotnet add tests/Day3part1.Tests package Expecto
+
+# ----- the operational entry point looks something like this:
+
+open System
+open Day3part1  // your library namespace
+
+[<EntryPoint>]
+let main argv =
+    printfn "Running Day3part1 production app..."
+    // Call into library code here
+    0
+
+# ----- the test runner looks something like this:
+
+open Expecto
+
+[<EntryPoint>]
+let main argv =
+    runTestsInAssemblyWithCLIArgs [] argv
+
+# ----- the Test suites look like:
+
+module Day3part1.Tests
+
+open Expecto
+open Day3part1
+
+[<Tests>]
+let sample =
+    testList "Sample tests" [
+        testCase "example" <| fun _ ->
+            Expect.equal (1 + 1) 2 "Math works"
+    ]
+
+# ----- The folder structure pattern:
+Day3part1/
+│   Day3part1.sln
+│
+├── src/
+│     └── Day3part1/            (F# Class Library)
+│           Day3part1.fsproj
+│           Library.fs
+│
+├── app/
+│     └── Day3part1.App/        (F# Console App)
+│           Day3part1.App.fsproj
+│           Program.fs
+│
+└── tests/
+      └── Day3part1.Tests/      (F# Console App running Expecto)
+            Day3part1.Tests.fsproj
+            Program.fs
+            Tests.fs
+
+# ----- to build it all:
+dotnet build
+# ----- to run operational app:
+dotnet run --project app/Day3part1.App
+# ----- to run tests:
+dotnet run --project tests/Day3part1.Tests -- --sequenced --debug

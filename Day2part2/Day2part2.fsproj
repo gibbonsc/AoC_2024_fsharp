@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='test'">
+    <Compile Include="Parse.fs" />
+    <Compile Include="Logic.fs" />
+    <Compile Include="Parse.Tests.fs" />
+    <Compile Include="Logic.Tests.fs" />
+    <Compile Include="Program.Tests.fs" />
+    <PackageReference Include="Expecto" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'!='test'">
+    <Compile Include="Parse.fs" />
+    <Compile Include="Logic.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
