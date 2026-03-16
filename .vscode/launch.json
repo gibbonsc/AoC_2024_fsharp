@@ -5,6 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": ".NET Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        },
+        {
             "name": ".NET Core Launch active (console)",
             "type": "coreclr",
             "request": "launch",
@@ -26,6 +32,20 @@
             "cwd": "${workspaceFolder}/Day1part1",
             "stopAtEntry": false,
             "console": "internalConsole",
+            "justMyCode": false
+        },
+        {
+            "name": "Day3part1 Tests (debug)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Day3part1",
+            "program": "${workspaceFolder}/Day3part1/tests/Day3part1.Tests/bin/Debug/net10.0/Day3part1.Tests.dll",
+            "args": [
+                "--debug"
+            ],
+            "cwd": "${workspaceFolder}/Day3part1/tests/Day3part1.Tests",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
             "justMyCode": false
         }
     ]
