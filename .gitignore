@@ -6,7 +6,8 @@
 # Eric doesn't want us to share input.txt
 input.txt
 
-# User-specific files
+# User-specific files & folders
+/!Downloads/
 *.rsuser
 *.suo
 *.user
@@ -14,7 +15,6 @@ input.txt
 *.sln.docstates
 
 # User-specific build results
-
 bin/
 obj/
 
