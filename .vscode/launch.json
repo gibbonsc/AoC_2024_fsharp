@@ -47,6 +47,30 @@
             "stopAtEntry": false,
             "console": "integratedTerminal",
             "justMyCode": false
-        }
-    ]
+        },
+        {
+            "name": "Day3part2",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Day3part2",
+            "program": "${workspaceFolder}/Day3part2/bin/Debug/net10.0/Day3part2.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day3part2",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "justMyCode": false
+        },
+        {
+            "name": "Day4part1",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Day4part1",
+            "program": "${workspaceFolder}/Day4part1/bin/Debug/net10.0/Day4part1.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day4part1",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "justMyCode": false
+        },
+   ]
 }

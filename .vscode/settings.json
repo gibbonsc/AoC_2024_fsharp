@@ -1,5 +1,10 @@
 {
   "FSharp.TestExplorer.AutoDiscoverTestsOnLoad": false,
   "FSharp.disableFailedProjectNotifications": true,
-  "FSharp.excludeProjectDirectories": []
+  "FSharp.excludeProjectDirectories": [
+    "Day3part1"
+  ],
+  "FSharp.workspaceModePeekDeepLevel": 4,
+  "FSharp.enableMSBuildProjectGraph": false,
+  "FSharp.verboseLogging": true
 }
