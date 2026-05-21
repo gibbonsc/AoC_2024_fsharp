@@ -61,5 +61,17 @@
             ],
             "problemMatcher": "$msCompile"
         },
+        {
+            "label": "build Day6part2",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Day6part2",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
     ]
 }

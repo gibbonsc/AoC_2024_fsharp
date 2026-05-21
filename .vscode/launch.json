@@ -72,5 +72,17 @@
             "console": "internalConsole",
             "justMyCode": false
         },
+        {
+            "name": "Day6part2",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Day6part2",
+            "program": "${workspaceFolder}/Day6part2/app/Day6Part2.App/bin/Debug/net10.0/Day6part2.App.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day6part2",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "justMyCode": false
+        },
    ]
 }

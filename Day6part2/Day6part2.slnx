@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/app/">
+    <Project Path="app/Day6part2.App/Day6part2.App.fsproj" />
+  </Folder>
+  <Folder Name="/lib/">
+    <Project Path="lib/Day6part2.Lib/Day6part2.Lib.fsproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Day6part2.Tests/Day6part2.Tests.fsproj" />
+  </Folder>
+</Solution>
