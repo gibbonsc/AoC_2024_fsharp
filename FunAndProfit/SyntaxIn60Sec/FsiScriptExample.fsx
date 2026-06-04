@@ -3,18 +3,17 @@
 //    downloads the given url and stores it as a file with a timestamp
 //
 // Example command line:
-//    fsi ShellScriptExample.fsx http://google.com google
+//    fsi ShellScriptExample.fsx http://google.(com google
 // ================================
 
 // "open" brings a .NET namespace into visibility
-open System.Net
+open System.Net.Http
 open System
 
 // download the contents of a web page
-let downloadUriToFile url targetfile =
-    let req = WebRequest.Create(Uri(url))
-    use resp = req.GetResponse()
-    use stream = resp.GetResponseStream()
+let downloadUriToFile (url: string) targetfile =
+    use req' = new HttpClient()
+    use stream = req'.GetStreamAsync(Uri(url)).Result
     use reader = new IO.StreamReader(stream)
     let timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH-mm")
     let path = sprintf "%s.%s.html" targetfile timestamp
