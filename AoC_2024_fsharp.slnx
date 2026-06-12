@@ -1,0 +1,24 @@
+<Solution>
+  <Folder Name="/Day3part1/">
+    <Project Path="Day3part1/lib/Day3part1.Lib/Day3part1.Lib.fsproj" />
+    <Project Path="Day3part1/src/Day3part1/Day3part1.fsproj" />
+    <Project Path="Day3part1/tests/Day3part1.Tests/Day3part1.Tests.fsproj" />
+  </Folder>
+  <Folder Name="/Day6part2/">
+    <Project Path="Day6part2/app/Day6part2.App/Day6part2.App.fsproj" />
+    <Project Path="Day6part2/lib/Day6part2.Lib/Day6part2.Lib.fsproj" />
+    <Project Path="Day6part2/tests/Day6part2.Tests/Day6part2.Tests.fsproj" />
+  </Folder>
+  <Project Path="Day1part1/Day1part1.fsproj" />
+  <Project Path="Day1part2/Day1part2.fsproj" />
+  <Project Path="Day2part1/Day2part1.fsproj" />
+  <Project Path="Day2part2/Day2part2.fsproj" />
+  <Project Path="Day3part2/Day3part2.fsproj" />
+  <Project Path="Day4part1/Day4part1.fsproj" />
+  <Project Path="Day4part2/Day4part2.fsproj" />
+  <Project Path="Day5part1/Day5part1.fsproj" />
+  <Project Path="Day5part2/Day5part2.fsproj" />
+  <Project Path="Day6part1/Day6part1.fsproj" />
+  <Project Path="Day7part1/Day7part1.fsproj" />
+  <Project Path="Day7part2/Day7part2.fsproj" />
+</Solution>

@@ -28,6 +28,14 @@ $TestsName = "${Name}.Tests"
 & dotnet sln add "lib/$LibName/${LibName}.fsproj"
 & dotnet sln add "app/$AppName/${AppName}.fsproj"
 & dotnet sln add "tests/$TestsName/${TestsName}.fsproj"
+# connect with top-level solution
+$MasterSln = "..\AoC_2024_fsharp.slnx"
+if (Test-Path $MasterSln) {
+    & dotnet sln $MasterSln add "lib/$LibName/${LibName}.fsproj" --solution-folder $Name
+    & dotnet sln $MasterSln add "app/$AppName/${AppName}.fsproj" --solution-folder $Name
+    & dotnet sln $MasterSln add "tests/$TestsName/${TestsName}.fsproj" --solution-folder $Name
+}
+# apply references and tools to scaffold
 & dotnet add "app/$AppName" reference "lib/$LibName"
 & dotnet add "tests/$TestsName" reference "lib/$LibName"
 & dotnet add "tests/$TestsName" package Expecto

@@ -84,5 +84,17 @@
             "console": "internalConsole",
             "justMyCode": false
         },
+        {
+            "name": "Day7part1",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Day7part1",
+            "program": "${workspaceFolder}/Day7part1/bin/Debug/net10.0/Day7part1.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day7part1",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "justMyCode": false
+        },
    ]
 }
